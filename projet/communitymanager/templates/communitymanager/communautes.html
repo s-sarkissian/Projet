@@ -5,6 +5,10 @@
     <title>Communities</title>
 </head>
 <body>
-
+<ul>
+    {% for com in communautes %}
+        <p>{{com.name}}</p>
+    {% endfor %}
+</ul>
 </body>
 </html>
