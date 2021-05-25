@@ -113,5 +113,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_URL = 'communitymanager/accounts/login/'
-LOGOUT_URL = 'communitymanager/accounts/logout/'
+LOGIN_URL = '/communitymanager/accounts/login/'
+LOGIN_REDIRECT_URL = '/communitymanager/accounts/profile/'
+LOGOUT_URL = '/communitymanager/accounts/logout/'

@@ -10,7 +10,7 @@
 {% block content %}
 <ul>
     {% for post in posts %}
-        <h4>{{post.titre}}</h4>
+        <h4><a href="/communitymanager/accounts/profile/post/{{post.id}}">{{post.titre}}</a></h4>
         <p>{{post.description}}</p>
     {% endfor %}
 </ul>

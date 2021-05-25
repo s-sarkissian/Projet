@@ -10,7 +10,7 @@
 {% block content %}
 <ul>
     {% for com in communautes %}
-        <p>{{com.name}}</p>
+        <p><a href="communaute/{{com.id}}">{{com.name}}</a></p>
     {% endfor %}
 </ul>
 {% endblock %}
