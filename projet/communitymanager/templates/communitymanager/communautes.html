@@ -5,10 +5,14 @@
     <title>Communities</title>
 </head>
 <body>
+{% extends "base.html" %}
+{% block title %}Welcome {{user.name}} {% endblock %}
+{% block content %}
 <ul>
     {% for com in communautes %}
         <p>{{com.name}}</p>
     {% endfor %}
 </ul>
+{% endblock %}
 </body>
 </html>

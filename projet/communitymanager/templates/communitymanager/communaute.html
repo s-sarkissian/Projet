@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community Viewer</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block title %}Welcome {{user.name}} to {{community.name}} {% endblock %}
+{% block content %}
+<ul>
+    {% for post in posts %}
+        <h4>{{post.titre}}</h4>
+        <p>{{post.description}}</p>
+    {% endfor %}
+</ul>
+{% endblock %}
+</body>
+</html>

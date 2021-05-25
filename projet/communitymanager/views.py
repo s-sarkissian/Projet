@@ -1,14 +1,19 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import Communaute
+from .models import Community, Post
 
 
 # Create your views here.
 @login_required
-def communaute(request):
-    communautes = Communaute.object.all()
-    return render(request, 'communitymanager/communautes.html', {'communautes':communautes})
+def communautes(request):
+    communautes = Community.objects.all()
+    return render(request, 'communitymanager/communautes.html', {'communautes': communautes})
 
 
 def login_successful(request):
-    return redirect('communitymanager/communautes.html')
+    return communautes(request)
+
+def communaute(request,id):
+    posts = Post.objects.filter(community=id)
+    community = Community.objects.get(id=id)
+    return render(request, 'communitymanager/communaute.html', {'community': community, 'posts':posts})

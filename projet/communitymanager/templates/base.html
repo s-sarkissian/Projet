@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My community manager app{% endblock %}</title>
+</head>
+<body>
+<header>Community Manager</header>
+<nav>{% block nav %}
+ <ul>
+ <li><a href="/communitymanager/accounts/profile/posts/">My news feed</a></li>
+ <li><a href="/communitymanager/accounts/profile/communautes/">My subscriptions</a></li>
+ <li><a href="/communitymanager/accounts/profile/create/">Create a post</a></li>
+ </ul>
+ {% endblock %}</nav>
+<section id="content">
+ {% block content %}{% endblock %}
+ </section>
+</body>
+</html>
