@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{user.username}}'s news feed</title>
+</head>
+<body>
+{% block title %}{{user.username}}'s news feed{% endblock %}
+{% block content %}
+<ul>
+    {% for post in posts %}
+        <h3><a href="/communitymanager/accounts/profile/post/{{post.id}}">{{post.titre}}</a></h3>
+        <h4>Written by {{post.auteur}}</h4>
+        <h5>{{post.date_creation}}</h5>
+        <p>{{post.description}}</p>
+    {% endfor %}
+</ul>
+{% endblock %}
+</body>
+</html>

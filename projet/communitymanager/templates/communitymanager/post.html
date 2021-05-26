@@ -15,10 +15,10 @@
 <form class="form" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <input class="btn btn-primary" type="submit" value="Submit"/>
-    <button onclick="window.history.back();" class="btn btn-secondary" type="button">Cancel</button>
+    <input class="btn btn-primary" type="submit" value="Comment"/>
 </form>
 <ul>
+    Current comments :
     {% for com in comments %}
         <h4>{{com.auteur}}</h4>
         <h5>{{com.date_creation}}</h5>

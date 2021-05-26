@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Community, Post, Comment
 from .forms import PostForm, CommentForm
-
+from django.utils import timezone
 
 # Create your views here.
 @login_required
@@ -28,7 +28,7 @@ def post(request, id):
     comments = Comment.objects.filter(post=id)
     form = CommentForm(request.POST or None)
     form.post = post
-    form.date_creation = datetime.datetime.now()
+    form.date_creation = timezone
     if form.is_valid():
         form.save()
         return redirect(request, post)
@@ -41,3 +41,8 @@ def create(request):
         form.save()
         return redirect(request, post)
     return render(request, 'communitymanager/create.html', locals())
+
+
+def feed(request):
+    posts = Post.objects.order_by('-date_creation')
+    return render(request, 'communitymanager/news.html', {'posts': posts})
