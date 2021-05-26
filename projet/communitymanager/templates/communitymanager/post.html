@@ -10,10 +10,12 @@
 {% block content %}
 <h1>{{post.titre}}</h1>
 <h2>{{post.auteur.username}}</h2>
+<h3>{{post.date_creation}}</h3>
 <p>{{post.description}}</p>
 <ul>
     {% for com in comments %}
         <h4>{{com.auteur}}</h4>
+        <h5>{{com.date_creation}}</h5>
         <p>{{com.contenu}}</p>
     {% endfor %}
 </ul>
