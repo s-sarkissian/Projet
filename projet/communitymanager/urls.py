@@ -10,4 +10,5 @@ urlpatterns = [
     path('accounts/profile/post/<int:id>', views.post),
     path('accounts/profile/create/', views.create),
     path('accounts/profile/posts/', views.feed),
+    path('accounts/profile/post/<int:id>/modify',views.modify)
 ]

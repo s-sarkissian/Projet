@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify Post</title>
+</head>
+<body>
+{% block title %}Please fill the post form{% endblock %}
+{% block content %}
+<form class="form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Submit"/>
+    <button onclick="window.history.back();" class="btn btn-secondary" type="button">Cancel</button>
+</form>
+{% endblock %}
+</body>
+</html>
