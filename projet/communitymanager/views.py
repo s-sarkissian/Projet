@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Community, Post, Comment
@@ -25,10 +27,12 @@ def post(request, id):
     post = Post.objects.get(id=id)
     comments = Comment.objects.filter(post=id)
     form = CommentForm(request.POST or None)
+    form.post = post
+    form.date_creation = datetime.datetime.now()
     if form.is_valid():
         form.save()
         return redirect(request, post)
-    return render(request, 'communitymanager/post.html', {'post': post, 'comments': comments})
+    return render(request, 'communitymanager/post.html', {'post': post, 'comments': comments}, locals())
 
 
 def create(request):
