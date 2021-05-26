@@ -12,6 +12,12 @@
 <h2>{{post.auteur.username}}</h2>
 <h3>{{post.date_creation}}</h3>
 <p>{{post.description}}</p>
+<form class="form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Submit"/>
+    <button onclick="window.history.back();" class="btn btn-secondary" type="button">Cancel</button>
+</form>
 <ul>
     {% for com in comments %}
         <h4>{{com.auteur}}</h4>
