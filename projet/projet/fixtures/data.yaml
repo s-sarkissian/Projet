@@ -261,8 +261,8 @@
 - model: auth.user
   pk: 1
   fields:
-    password: pbkdf2_sha256$120000$x0Lz3M7tuSMA$5YMu+qWwADrYOynEMV23DUMDR2Wp0wMmN3o+I2Qbe/Q=
-    last_login: 2021-05-25 10:01:43.788462+00:00
+    password: pbkdf2_sha256$120000$ziMnOdKeSJHn$ImJ1nGPSmhEXVOYjVwXyMneEo+RVKwCoj55qlWOVOak=
+    last_login: 2021-05-27 06:37:08.101721+00:00
     is_superuser: true
     username: sevan
     first_name: Sevan
